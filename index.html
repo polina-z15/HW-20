@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>healthcare1</title>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick.css"> -->
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/media.css" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="header-nav">
+        <img src="./images/logo-HEALTCARE.png" alt="logo" />
+        <nav id="nav" class="nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link active"><span class="home1">Home</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Article</a>
+            </li>
+            <li class="nav-item">
+              <a href="./index.html" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <button id="openModalBtn" class="button-blue nav-get">
+                Get Started
+              </button>
+            </li>
+          </ul>
+          <button id="nav-btn" class="nav-button">
+            <span class="burger-icon">&#9776;</span>
+          </button>
+        </nav>
+      </div>
+      <div class="header-row">
+        <div class="header-content" data-aos="fade-up">
+          <h1 class="header-heading">
+            Find And Search Your<br />
+            <span>Suitable Doctor’s</span>
+          </h1>
+          <p>
+            Join us and take care of yourself and your family with health
+            services that will make you feel confident and safe in your daily
+            life.
+          </p>
+          <div class="search-field">
+            <div class="search-field-left">
+              <div class="search-text">Find your doctor</div>
+            </div>
+            <div class="search-field-right">
+              <div class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 15 18" fill="none">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.58341 7.52731C9.58341 6.38437 8.65072 5.45825 7.5005 5.45825C6.34944 5.45825 5.41675 6.38437 5.41675 7.52731C5.41675 8.6694 6.34944 9.59552 7.5005 9.59552C8.65072 9.59552 9.58341 8.66940 9.58341 7.52731Z"
+                    stroke="#3D3D3F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.49962 16.2152C6.50089 16.2152 1.25003 11.9939 1.25003 7.57932C1.25003 4.12333 4.04761 1.32104 7.49962 1.32104C10.9516 1.32104 13.75 4.12333 13.75 7.57932C13.75 11.9939 8.49835 16.2152 7.49962 16.2152Z"
+                    stroke="#3D3D3F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <select>
+                <option>Los Angeles, USA</option>
+                <option>London, UK</option>
+                <option selected>New York, USA</option>
+              </select>
+            </div>
+            <div class="search-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="33" height="37" viewBox="0 0 33 37" fill="none">
+                <path
+                  d="M25.7929 12.7952C27.3869 18.6974 23.8945 24.7744 17.9922 26.3684C12.09 27.9625 6.01303 24.47 4.41898 18.5678C2.82492 12.6656 6.31739 6.58861 12.2196 4.99455C18.1219 3.40049 24.1988 6.89296 25.7929 12.7952Z"
+                  stroke="white" stroke-width="2.5" />
+                <path d="M20.8703 14.9758C19.9242 11.4725 16.3172 9.39954 12.8139 10.3457" stroke="white"
+                  stroke-width="2.5" stroke-linecap="round" />
+                <path d="M27.4665 26.8059L31.2991 30.6875" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="header-img" data-aos="fade-left">
+          <picture>
+            <img class="aunt" src="./images/Back-image.png" alt="" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Заповніть дані</h2>
+      <form id="contactForm">
+        <label for="email">Пошта:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required />
+        <label for="message">Повідомлення:</label>
+        <textarea id="message" name="message" required></textarea>
+        <div class="button-group">
+          <button type="button" id="resetFormBtn">Скинути</button>
+          <input type="submit" value="Send" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <main>
+    <div class="container">
+      <section class="steps-section">
+        <div class="container">
+          <h2 class="steps-heading">3 Easy Steps and Get Your Solution</h2>
+          <div class="steps-block">
+            <div class="step">
+              <img src="./images/1.png" alt="doctor’s" />
+              <p class="step-text">Find best doctor’s</p>
+              <p class="step-paragraph">
+                Find your doctor easily with a minimum of effort. We've kept
+                everything organised for you.
+              </p>
+            </div>
+            <div class="step">
+              <img src="./images/2.png" alt="Get Appointment" />
+              <p class="step-text">Get Appointment</p>
+              <p class="step-paragraph">
+                Ask for an appointment of the doctor quickly with almost a
+                single click. We take care of the rest.
+              </p>
+            </div>
+            <div class="step">
+              <img src="./images/3.png" alt="doctor’s" />
+              <p class="step-text">Happy Consultations</p>
+              <p class="step-paragraph">
+                Do consultations and take the service based on your
+                appointment. Get back to good health
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section container3">
+        <div class="left">
+          <img src="./images/doctor.png" alt="" />
+        </div>
+        <div class="right">
+          <h2 class="title">
+            Best quality service with our experienced doctors
+          </h2>
+          <p class="paragraph">
+            With our top doctors, we are able to provide the best medical
+            services above average. We have highly experienced doctors, so
+            don't worry. They are also very talented in their fields.
+          </p>
+          <div class="section">
+            <div class="left2">
+              <img src="./images/ant-design_check-circle-filled.png" alt="done" />
+            </div>
+            <div class="right2">
+              <p class="text2">
+                Search for your specialist &amp; Online consultations
+                anywhere.
+              </p>
+            </div>
+          </div>
+          <div class="section">
+            <div class="left2">
+              <img src="./images/ant-design_check-circle-filled.png" alt="done" />
+            </div>
+            <div class="right2">
+              <p class="text2">Consultation our top specialists</p>
+            </div>
+          </div>
+          <div class="section">
+            <div class="left2">
+              <img src="./images/ant-design_check-circle-filled.png" alt="done" />
+            </div>
+            <div class="right2">
+              <p class="text2">Doctors are available 24/7</p>
+            </div>
+          </div>
+          <div class="explore-section">
+            <a href="#" class="explore-btn">
+              Explore specialists
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M10 12.25H22.0001" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M16.75 7L22 12.25L16.75 17.5001" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <section>
+        <div class="container container4">
+          <h1 class="section-title-1">Our Service</h1>
+          <p class="section-paragraph">
+            Our doctors have high qualified skills and are guaranteed to help you recover from your disease.
+          </p>
+          <div class="card-row">
+            <div class="card">
+              <div class="card-image ">
+                <img class="ci1" src="./images/Cardiology.png" alt="Cardiology">
+              </div>
+              <div class="card-title">
+                Cardiology
+              </div>
+              <div class="card-description">
+                Our cardiologists are skilled at diagnosing and treating diseases of the cardiovascular system.
+              </div>
+            </div>
+
+            <div class="card card-02">
+              <div class="card-image">
+                <img src="./images/Pulmonology.png" alt="Cardiology">
+              </div>
+              <div class="card-title">
+                Pulmonology
+              </div>
+              <div class="card-description">
+                Our Pulmonologist are skilled at diagnosing treating diseases of the Pulmonology system.
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-image">
+                <img src="./images/Medicine.png" alt="Cardiology">
+              </div>
+              <div class="card-title">
+                Medicine
+              </div>
+              <div class="card-description">
+                Our medcine doctor are skilled at diagnosing treating diseases of the latest medicne system.
+              </div>
+            </div>
+          </div>
+          <div class="custom-dots">
+            <svg xmlns="http://www.w3.org/2000/svg" width="159" height="18" viewBox="0 0 159 18" fill="none">
+              <rect y="2" width="60" height="15" rx="6" fill="#40A3F8" />
+              <circle cx="84" cy="9" r="9" fill="#DBE8EE" />
+              <circle cx="117" cy="9" r="9" fill="#DBE8EE" />
+              <circle cx="150" cy="9" r="9" fill="#DBE8EE" />
+            </svg>
+          </div>
+      </section>
+
+      <section class="doctor-section">
+        <h2>Meet Our Certified Online Doctors</h2>
+        <input type="range" class="doctor-slider">
+        <p>Our online doctors have an average of 15 years of experience and a 98% satisfaction rating; they really set
+          us apart!</p>
+        <div class="container6">
+          <div class="card6">
+            <div class="card-image">
+              <img class="ci6" src="./images/11.png" alt="Cardiology">
+              <div class="card-text-overlay">
+                <div class="card-title-6">
+                  Dr Amanda Linda
+                </div>
+                <div class="card-description-6">
+                  Dentist Specialist
+                </div>
+              </div>
+            </div>
+            <div class="social-icons">
+              <a href="#" class="social-icon"><img src="./images/Fb.png" alt="Facebook"></a>
+              <a href="#" class="social-icon"><img src="./images/Tw.png" alt="Twitter"></a>
+              <a href="#" class="social-icon"><img src="./images/Ld.png" alt="ld"></a>
+            </div>
+
+          </div>
+          <div class="card6">
+            <div class="card-image">
+              <img class="ci6" src="./images/22.png" alt="Dr. Alisa Rahman">
+              <div class="card-text-overlay">
+                <div class="card-title-6">
+                  Dr. Alisa Rahman
+                </div>
+                <div class="card-description-6">
+                  Carddiologist Specilist
+                </div>
+              </div>
+            </div>
+            <div class="social-icons">
+              <a href="#" class="social-icon"><img src="./images/Fb.png" alt="Facebook"></a>
+              <a href="#" class="social-icon"><img src="./images/Tw.png" alt="Twitter"></a>
+              <a href="#" class="social-icon"><img src="./images/Ld.png" alt="ld"></a>
+            </div>
+          </div>
+          <div class="card6">
+            <div class="card-image">
+              <img class="ci6" src="./images/33.png" alt="Dr. Anthony Fauci">
+              <div class="card-text-overlay">
+                <div class="card-title-6">
+                  Dr. Anthony Fauci
+                </div>
+                <div class="card-description-6">
+                  Neurology Specilist
+                </div>
+              </div>
+            </div>
+            <div class="social-icons">
+              <a href="#" class="social-icon"><img src="./images/Fb.png" alt="Facebook"></a>
+              <a href="#" class="social-icon"><img src="./images/Tw.png" alt="Twitter"></a>
+              <a href="#" class="social-icon"><img src="./images/Ld.png" alt="ld"></a>
+            </div>
+          </div>
+          <div class="card6">
+            <div class="card-image">
+              <img class="ci6" src="./images/44.png" alt="Dr. Khalid Abbed">
+              <div class="card-text-overlay">
+                <div class="card-title-6">
+                  Dr. Khalid Abbed
+                </div>
+                <div class="card-description-6">
+                  Cancer Specilist
+                </div>
+              </div>
+            </div>
+            <div class="social-icons">
+              <a href="#" class="social-icon"><img src="./images/Fb.png" alt="Facebook"></a>
+              <a href="#" class="social-icon"><img src="./images/Tw.png" alt="Twitter"></a>
+              <a href="#" class="social-icon"><img src="./images/Ld.png" alt="ld"></a>
+            </div>
+          </div>
+        </div>
+        <div class="explore-button">
+          <a href="#" class="explore-link">Explore All Doctors</a>
+        </div>
+      </section>
+
+      <section class="custom-container">
+        <div class="custom-left">
+          <img src="./images/Mockup1.png" alt="HealthCare" class="custom-image">
+        </div>
+        <div class="custom-right">
+          <div class="custom-title">
+            Mobile apps are available<br>Get HealthCare for free!
+          </div>
+          <p class="custom-description">
+            Get on-demand access to a doctor on your phone with the free HealthCare mobile app. Download and register on
+            our app for free and feel safe for all your family.
+          </p>
+          <div class="custom-buttons">
+            <img src="./images/Store1.png" alt="Store">
+            <img src="./images/Store2.png" alt="Store">
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="custom-container7">
+          <div class="custom-section7">
+            <h2 class="custom-section-title7">Look our Clients have to say about us</h2>
+
+            <div class="container-sw">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img class="Quote" src="./images/Quote.png" alt="Quote">
+                    <div class="card7">
+                      <img src="./images/bg111.png" alt="Client Photo 1" width="63" height="63">
+                      <div class="card-content7">
+                        <h2>Amber Morales</h2>
+                        <p class="new-sw">New York, America, USA</p>
+                        <img class="stars" src="./images/stars.png" alt="stars">
+                        <p class="paragraph-sw">Telehealth is fueled by digital technologies and DocTime telemedicine
+                          app has brought a great revolution in medical services specially an overpopulated country
+                          where virtual chamber can create at anywhere thoughout country</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img class="Quote" src="./images/Quote.png" alt="Quote">
+                    <div class="card7 card-7.2">
+                      <img src="./images/bg222.png" alt="Client Photo 1" width="63" height="63">
+                      <div class="card-content7">
+                        <h2>Alex Maxwell</h2>
+                        <p class="new-sw">San Francisco, USA</p>
+                        <img class="stars" src="./images/stars.png" alt="stars">
+                        <p class="paragraph-sw">I visited my PCP for abdominal pain. My doctor told me that I need to
+                          see Gastroenterologist. Earlier I used to call multiple offices to schedule an appointment
+                          that suites my time.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img class="Quote" src="./images/Quote.png" alt="Quote">
+                    <div class="card7">
+                      <img src="./images/bg333.png" alt="Client Photo 1" width="63" height="63">
+                      <div class="card-content7">
+                        <h2>Dr. Tasnim zara</h2>
+                        <p class="new-sw">New York, America, USA</p>
+                        <img class="stars" src="./images/stars.png" alt="stars">
+                        <p class="paragraph-sw">Telehealth is fueled by digital technologies and DocTime telemedicine
+                          app has brought a great revolution in medical services specially an overpopulated country
+                          where virtual chamber can create at anywhere thoughout country</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img class="Quote" src="./images/Quote.png" alt="Quote">
+                    <div class="card7">
+                      <img src="./images/bg111.png" alt="Client Photo 1" width="63" height="63">
+                      <div class="card-content7">
+                        <h2>Amber Morales</h2>
+                        <p class="new-sw">New York, America, USA</p>
+                        <img class="stars" src="./images/stars.png" alt="stars">
+                        <p class="paragraph-sw">Telehealth is fueled by digital technologies and DocTime telemedicine
+                          app has brought a great revolution in medical services specially an overpopulated country
+                          where virtual chamber can create at anywhere thoughout country</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img class="Quote" src="./images/Quote.png" alt="Quote">
+                    <div class="card7 card-7.2">
+                      <img src="./images/bg222.png" alt="Client Photo 1" width="63" height="63">
+                      <div class="card-content7">
+                        <h2>Alex Maxwell</h2>
+                        <p class="new-sw">San Francisco, USA</p>
+                        <img class="stars" src="./images/stars.png" alt="stars">
+                        <p class="paragraph-sw">I visited my PCP for abdominal pain. My doctor told me that I need to
+                          see Gastroenterologist. Earlier I used to call multiple offices to schedule an appointment
+                          that suites my time.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img class="Quote" src="./images/Quote.png" alt="Quote">
+                    <div class="card7">
+                      <img src="./images/bg333.png" alt="Client Photo 1" width="63" height="63">
+                      <div class="card-content7">
+                        <h2>Dr. Tasnim zara</h2>
+                        <p class="new-sw">New York, America, USA</p>
+                        <img class="stars" src="./images/stars.png" alt="stars">
+                        <p class="paragraph-sw">Telehealth is fueled by digital technologies and DocTime telemedicine
+                          app has brought a great revolution in medical services specially an overpopulated country
+                          where virtual chamber can create at anywhere thoughout country</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="image-container8">
+          <img src="./images/Object.png" alt="Картинка">
+          <div class="text-overlay8">
+            <p>It’s time change your <br> life today</p>
+          </div>
+          <button class="button-overlay8">Book an Appoinment</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container сont">
+      <div class="footer-part">
+        <div class="logo">
+          <img src="./images/logo-HEALTCARE.png" alt="HEALTCARE">
+        </div>
+        <p>Metairie, 3689 Bassel Street, LA, Louisiana.</p>
+        <p>Contact us: 225-788-5489.</p>
+        <div class="social-icons">
+          <a href="#">
+            <img class="fb2" src="./images/f.png" alt="facebook">
+          </a>
+          <a href="#">
+            <img src="./images/Instagram.png" alt="Instagram">
+          </a>
+          <a href="#">
+            <img src="./images/Twitter.png" alt="Twitter">
+          </a>
+          <a href="#">
+            <img src="./images/Youtube.png" alt="Youtube">
+          </a>
+        </div>
+      </div>
+      <div class="p2 footer-part ">
+        <ul class="">
+          <li class="main-ca">Category</li>
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Reviews</li>
+          <li>Article</li>
+        </ul>
+      </div>
+      <div class="p3 footer-part">
+        <ul>
+          <li class="main-ca">About</li>
+          <li>Partners</li>
+          <li>Careers</li>
+          <li>Press</li>
+          <li>Community</li>
+        </ul>
+      </div>
+      <div class="p3 footer-part">
+        <h3 class="main-ca">Subscribe newsletter</h3>
+        <p>Sign up for tips, new destinations, and exclusive promos.</p>
+        <div class="subscribe-form">
+          <input type="email" placeholder="Enter your email" />
+          <button class="subscribe-button">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script>
+    let swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        868: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 32,
+        },
+      },
+    });
+
+    // другое
+    const openModalBtn = document.getElementById("openModalBtn");
+    const modal = document.getElementById("myModal");
+    const closeBtn = document.getElementsByClassName("close")[0];
+    const contactForm = document.getElementById("contactForm");
+    const resetFormBtn = document.getElementById("resetFormBtn");
+
+    function openModal() {
+      modal.style.display = "block";
+    }
+    function closeModal() {
+      modal.style.display = "none";
+    }
+    function resetForm() {
+      contactForm.reset();
+    }
+    closeBtn.onclick = closeModal;
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    openModalBtn.onclick = openModal;
+    contactForm.onsubmit = function (event) {
+      event.preventDefault();
+      console.log("Дані форми були відправлені!");
+      closeModal();
+    };
+    resetFormBtn.onclick = resetForm;
+  </script>
+
+</body>
+
+</html>
